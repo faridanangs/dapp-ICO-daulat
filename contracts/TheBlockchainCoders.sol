@@ -79,10 +79,24 @@ contract TheBlockchainCoders {
         balanceOF[_from] -= _value;
 
         allowance[_from][msg.sender] -= _value;
-
-        
         emit Transfer(_from, _to, _value);
 
         return true;
+    }
+
+    // get token gholder data
+    function getTokenHolderData(address _address) public view  returns (uint256, address, address, uint256, bool) {
+        return(
+            tokenHolderInfos[_address]._tokenId,
+            tokenHolderInfos[_address]._from,
+            tokenHolderInfos[_address]._to,
+            tokenHolderInfos[_address]._totalToken,
+            tokenHolderInfos[_address]._tokenHolder
+        );
+    }
+
+    // get token holder
+    function getTokenHolder() public view returns (address[] memory) {
+        return holderToken;
     }
 }
