@@ -1,6 +1,5 @@
-import React from "react";
 import { TOKEN_ADDRESS, TOKEN_ABI, TOKEN_SALE_ABI, TOKEN_SALE_ADDRESS } from "../Context/constants"
-import { ethers } from "ethers";
+import { Contract, ethers } from "ethers";
 import Web3Modal from "web3modal";
 
 export const CheckIfWalletConnected = async () => {
@@ -25,8 +24,8 @@ export const connectWallet = async () => {
       method: "eth_requestAccounts"
     })
 
-    window.location.reload()
     const firstAccount = accounts[0]
+    window.location.reload()
     return firstAccount
   } catch (error) {
     console.log(error)
@@ -35,11 +34,11 @@ export const connectWallet = async () => {
 
 
 // token contract
-const fetchTokenContract = (signerOfProvider) => new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, signerOfProvider);
+const fetchTokenContract = (signerOfProvider) =>  new Contract(TOKEN_ADDRESS, TOKEN_ABI, signerOfProvider);
 
 export const connectingTokenContract = async () => {
   try {
-    const web3Modal = Web3Modal();
+    const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
@@ -53,7 +52,7 @@ export const connectingTokenContract = async () => {
 // get balance
 export const getBalance = async () => {
   try {
-    const web3Modal = Web3Modal();
+    const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
@@ -71,7 +70,7 @@ const fetchTokenSaleContract = (signerOfProvider) => new ethers.Contract(TOKEN_S
 
 export const connectingTokenSaleContract = async () => {
   try {
-    const web3Modal = Web3Modal();
+    const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();

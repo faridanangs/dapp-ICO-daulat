@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 contract TheBlockchainCoders {
-    string public name = "The Blockchain Coders";
-    string public symbol = "TBC";
-    string public standard = "@theblockchaincoders v.0.1";
+    string public name = "Belajar Belock Chain";
+    string public symbol = "BBC";
+    string public standard = "@belajarblockchain v0.0.1";
     uint256 public totalSuply;
     address public ownerOfContract;
     uint256 public _userId;

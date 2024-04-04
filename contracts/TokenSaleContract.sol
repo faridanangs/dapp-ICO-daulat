@@ -31,6 +31,7 @@ contract TokenSale {
                 _numberOfToken * 1000000000000000000
             )
         );
+        tokenSold += _numberOfToken;
         emit Sell(msg.sender, _numberOfToken);
     }
 
