@@ -46,7 +46,7 @@ contract TheBlockchainCoders {
         address _to,
         uint256 _value
     ) public returns (bool success) {
-        require(balanceOF[msg.sender] >= _value, "saldo anda kurang");
+        require(balanceOF[msg.sender] >= _value);
         inc();
 
         balanceOF[msg.sender] -= _value;

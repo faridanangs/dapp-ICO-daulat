@@ -137,7 +137,7 @@ export const StateContextProvider = ({ children }) => {
     // native token transfer
     const transferNativeToken = async () => {
         try {
-            const TOKEN_AMOUNT = 500;
+            const TOKEN_AMOUNT = 5000;
             const tokens = TOKEN_AMOUNT.toString();
             const transferAmount = ethers.utils.parseEther(tokens);
 

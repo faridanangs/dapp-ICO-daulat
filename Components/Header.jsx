@@ -95,7 +95,7 @@ const Header = ({ address, setAddress, connectWallet }) => {
               >
                 {address ? (
                   <a className="btn btn-default btn-radius nav_item">
-                    <small className="new-color">
+                    <small className="text-white">
                       {""}
                       {address.slice(0, 15)}...
                     </small>
@@ -105,7 +105,7 @@ const Header = ({ address, setAddress, connectWallet }) => {
                     onClick={() => connectWallet()}
                     className="btn btn-default btn-radius nav_item"
                   >
-                    <small className="new-color">
+                    <small className="text-white">
                       {""}
                       Connect
                     </small>
