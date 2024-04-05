@@ -97,6 +97,14 @@ export const StateContextProvider = ({ children }) => {
                 tokenSaleBalance: ethers.utils.formatEther(tokenSaleBalance.toString()),
             }
             setTokenSale(tokenSale)
+
+
+            console.log(nativeToken, "native")
+            console.log(tokenSale, "token sale")
+            console.log(currentHolder, "curen holder")
+            console.log(TOKEN_CONTRACT, "contract")
+            console.log(TOKEN_SALE_CONTRACT, "sale contract")
+
         } catch (error) {
             console.error(error)
         }
@@ -112,15 +120,14 @@ export const StateContextProvider = ({ children }) => {
     // buy token
     const buyToken = async (nToken) => {
         try {
-            const amount = ethers.utils.formatEther(nToken.toString(), "ether");
+            const amount = ethers.utils.parseEther(nToken.toString());
             const contract = await connectingTokenSaleContract()
             const buying = await contract.buyToken(nToken, {
-                value: amount.toString()
+                value: amount.toString(),
             })
             await buying.wait()
+            console.log(buying, "buying")
             window.location.reload()
-
-
         } catch (error) {
             console.error(error)
         }

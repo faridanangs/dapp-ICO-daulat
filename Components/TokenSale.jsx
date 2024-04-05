@@ -147,7 +147,7 @@ const TokenSale = ({ buyToken, tokenSale }) => {
                     <span className="progress_max_val">Soft Caps</span>
                   </div>
                   <a
-                    href="#"
+                    onClick={() => buyToken(nToken)}
                     className="btn btn-default btn-radius animation"
                     data-animation="fadeInUp"
                     data-animation-delay="0.2s"
