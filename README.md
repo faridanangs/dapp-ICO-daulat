@@ -105,9 +105,3 @@ We are using RemixID for deploying the contract and generation of the ABI in the
 - [All Projects Source Code](https://www.theblockchaincoders.com/SourceCode)
 
 
-## Authors
-
-- [@theblockchaincoders.com](https://www.theblockchaincoders.com/)
-- [@consultancy](https://www.theblockchaincoders.com/consultancy)
-- [@youtube](https://www.youtube.com/@daulathussain)
-
